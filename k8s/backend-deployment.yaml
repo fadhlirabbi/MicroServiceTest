@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: backend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGODB_URI
+          value: "mongodb+srv://ytta:yttaytta@myapp.2rnkqve.mongodb.net/mydatabase?retryWrites=true&w=majority"
+        - name: PORT
+          value: "3000"

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  annotations:
+    cloud.google.com/load-balancer-type: "External"  # Jika di GKE
+spec:
+  type: LoadBalancer  # Lebih baik untuk akses eksternal
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30000  # Opsional jika tetap ingin NodePort
