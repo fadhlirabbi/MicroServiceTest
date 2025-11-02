@@ -49,5 +49,5 @@ Gunakan script `setup.sh` untuk otomatisasi seluruh proses deploy.
 ### 1. Kloning Repositori
 
 ```bash
-git clone [URL_REPO_ANDA]
+git clone https://github.com/fadhlirabbi/microservicetest
 cd MicroServiceTest-ea0c7a6ae39905f5b9d7ae14106cb1bdc124b55b
